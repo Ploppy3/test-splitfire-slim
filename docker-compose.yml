@@ -26,6 +26,7 @@ services:
       MYSQL_DATABASE: db
     # volumes:
     #  - ./mysql_old:/var/lib/mysql
+    
   adminer:
     image: adminer
     container_name: adminer-splitfire

@@ -5,15 +5,11 @@
 
 ## Installation w/ Docker
 
-`cd slim`
+Install project dependencies with composer:
 
-Install php dependencies with composer:
+`./prebuild.sh`
 
-`docker run --rm --interactive --tty --volume ${PWD}:/app composer install`
-
-Create php-apache Docker image:
-
-`cd ..`
+Build php-apache Docker image:
 
 `docker-compose build`
 
