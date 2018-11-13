@@ -5,10 +5,13 @@
 `cd slim`
 
 Install php dependencies with composer:
+
 `docker run --rm --interactive --tty --volume ${PWD}:/app composer install`
 
 Create php docker image:
+
 `cd ..`
+
 `docker-compose build`
 
 ## start server
@@ -27,3 +30,9 @@ Password: pwd
 ```
 
 Once signed-in, select the `db` database, import the `database.sql` file
+
+## test
+
+`[GET] localhost/tweets`
+
+`[POST] localhost/tweets`
