@@ -1,6 +1,9 @@
-# test-slim
 
-## installation
+# Test-Splitfire-Slim
+
+[Objectifs](https://gist.github.com/helitik/8e198adf0f7c82b067af89132a29a7ff)
+
+## Installation w/ Docker
 
 `cd slim`
 
@@ -8,30 +11,30 @@ Install php dependencies with composer:
 
 `docker run --rm --interactive --tty --volume ${PWD}:/app composer install`
 
-Create php docker image:
+Create php-apache Docker image:
 
 `cd ..`
 
 `docker-compose build`
 
-## start server
+## Start servers
 
 `docker-compose up`
 
-## restore database
+## Restore database
 
-Open `localhost:8080` in your web browser
+Open Adminer at `localhost:8080` in your web browser
 
-```
-System: MySQL
-Server: mysql
-Username: root
-Password: pwd
-```
+Sign in:
 
-Once signed-in, select the `db` database, import the `database.sql` file
+- System: MySQL
+- Server: mysql
+- Username: root
+- Password: pwd
 
-## test
+Select the `db` database, import the `database.sql` dump file
+
+## Test endpoints
 
 `[GET] localhost/tweets`
 
