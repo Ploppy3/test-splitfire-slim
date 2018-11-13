@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+
+  php-apache:
+    image: custom-php-splitfire
+    container_name: php-splitfire
+    restart: always
+    build: ./slim/
+    volumes:
+     - ./slim:/var/www/html
+    ports:
+      - 80:80
+    links: 
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql-splitfire
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    environment: 
+      MYSQL_ROOT_PASSWORD: pwd
+      MYSQL_DATABASE: db
+    # volumes:
+    #  - ./mysql_old:/var/lib/mysql
+  adminer:
+    image: adminer
+    container_name: adminer-splitfire
+    restart: always
+    ports:
+      - 8080:8080
